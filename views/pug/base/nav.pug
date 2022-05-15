@@ -1,0 +1,22 @@
+.containerfluid
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      a.navbar-brand.mx-2(href='#') My Libray 
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNavDropdown.collapse.navbar-collapse
+        ul.navbar-nav
+          li.nav-item.active
+            a.nav-link(href='#')
+              | Home 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='#') Features
+          li.nav-item
+            a.nav-link(href='#') Pricing
+          li.nav-item.dropdown
+            a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              | Dropdown link
+            .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+              a.dropdown-item(href='#') Action
+              a.dropdown-item(href='#') Another action
+              a.dropdown-item(href='#') Something else here
