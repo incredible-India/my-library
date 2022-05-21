@@ -1,0 +1,60 @@
+extends ./base/base.pug
+
+block title 
+    title My Library Login
+
+block link 
+    style 
+        include ./../assets/css/login.css
+
+block nav 
+    include ./base/nav.pug
+
+
+block content 
+    .container.mt-3 
+
+        form(action="") 
+        fieldset
+            legend User Cradential
+                i.fas.fa-key 
+                 
+
+            table 
+                thead 
+                    tr
+                    th Userid 
+                    th Password 
+                tbody 
+                    tr 
+                        td 
+                            input(type="text" placeholder="userid") 
+                        td    
+                            input(type="password") 
+                    tr
+                        td 
+                            label(for='super').mt-3 Super User
+                            input(type="radio", name="super" id="super")
+                        td 
+                            label(for='library').mt-3 Library Admin
+                            input(type="radio", name="super" id='library')
+                        td 
+                            label(for='student').mt-3 Student
+                            input(type="radio", name="super" id='student')
+                    tr 
+                        td 
+                            input.mt-3(type="submit", value="Submit")
+        
+    
+    .container.mt-2.text-center 
+        h3.mt-2.text-secondary
+            i.fa-solid.fa-book-open-reader.jk
+            br
+            |तमसो मा ज्योतिर्गमय
+            br
+            
+            
+
+
+
+

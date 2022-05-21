@@ -4,7 +4,12 @@ const schema = mongoose.Schema;
 
 const superuserSchema = new Schema({
 
-    name :{
+    fname :{
+        type : String,
+        require:true,
+
+    },
+    lname :{
         type : String,
         require:true,
 
@@ -12,6 +17,7 @@ const superuserSchema = new Schema({
     email :{
         type : String,
         require:true,
+        unique : true
     },
     password :{
         type : String,

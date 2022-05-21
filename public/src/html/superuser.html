@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <title>Super User</title>
+    <style>
+
+        label {
+            color:white;
+        }
+    </style>
+  </head>
+  <body>
+   
+
+    <div class="container mt-3">
+
+        <h3 class="text-dark text-center">Super User</h3>
+
+        
+
+    </div>
+
+
+    <div class="container">
+
+        <p class="text-danger allfields">
+            All fields are required..
+        </p>
+    </div>
+
+    <div class="form">
+
+        <div class="container mt-2 bg-secondary" style="padding: 30px;">
+
+
+           <form action="/users/checkValidation" method="post" enctype="multipart/form">
+
+            <div class="row">
+
+                <div class="col-sm-6">
+
+                    <label for="fname">First Name</label>
+                    <input type="text" name="fname" placeholder="First Name" required id="fname" class="form-control">
+                    <span class="text-light" style="display: none;" id="f">*First name cannot be less than 3 characters</span> <br>
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" placeholder="email" required id="email" class="form-control">
+                    <span class="text-light" style="display: none;" id='e'>Invalid email</span> <br>
+
+                    <label for="password">Confirm Password</label>
+                    <input type="password" name="cnfpassword" placeholder="Password" required id="cnfpassword" class="form-control">
+                    <span class="text-light" style="display: none;" id="cp">*Confirm password does not matched with  the password</span> <br>
+
+                    <input type="submit" value="Preview" class="btn btn-primary mt-2">
+
+                </div>
+
+                <div class="col-sm-6">
+
+                    <label for="lname">Last Name</label>
+                    <input type="text" name="lname" placeholder="last Name" required id="lname" class="form-control">
+                    <span class="text-light" style="display: none;" id="l">*Last name cannot be less than 3 characters</span> <br>
+
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="Password" required id="password" class="form-control">
+                    <span class="text-light" style="display: none;" id="p">Password is too short..</span> <br>
+
+
+                    <label for="img">Image</label>
+                    <input type="file" name="img" placeholder="image" required id="img" class="form-control">
+                    <span class="text-light" style="display: none;" id="i">please upload your image</span> <br>
+
+
+
+
+                </div>
+            </div>
+           </form>
+
+        </div>
+
+    </div>
+
+    <div class="container mt-3 preview" >
+
+        <div class="row" style="border: 2px solid black">
+
+            <div class="col-sm-8">
+
+                <p class="fname text-dark"></p>
+                <p class="lname text-dark"></p>
+                <p class="email text-dark"></p>
+
+                <input type="button" value="Submit" class="btn btn-success sub mt-2">
+                <input type="button" value="Go Back" class="btn btn-danger gb mt-2">
+
+            </div>
+
+            <div class="col-sm-4">
+                <img src="" alt="ssss" id="userimg" with="250px" height="250px">
+
+            </div>
+        </div>
+
+    </div>
+
+  </body>
+
+  <script src="/public/src/js/superuser.js"></script>
+</html>

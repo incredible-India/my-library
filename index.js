@@ -9,6 +9,8 @@ const cors = require('cors'); //handiling cores error
 dbsConnection = require('./db/dbsConnection');
 const path = require('path');
 // const chalk = require('chalk');
+//router pages
+const userlogin = require('./controller/users');
 
 const app =  express();
 
@@ -19,6 +21,9 @@ const port = 8000 || process.env.PORT
 //middleware
 app.set('view engine','pug');
 app.set('views','./views/pug/');
+//setting the routing pages
+app.use('/users',userlogin);
+
 
 app.use(express.static(path.join(__dirname, './'))); //for the static files
 app.use(morgan('dev'));//morgan

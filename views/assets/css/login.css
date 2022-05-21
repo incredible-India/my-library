@@ -1,0 +1,21 @@
+
+form,table,fieldset{
+
+    background-color: gray;
+    width: 100%;
+    padding: 30px;
+}
+
+legend{
+    border: 1px solid black;
+}
+
+table,th,tr
+{
+    border: 1px solid black;
+}
+
+
+.jk{
+    font-size:35px;
+}
