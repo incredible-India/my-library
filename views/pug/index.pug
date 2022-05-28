@@ -12,6 +12,13 @@ block nav
 
 
 block content 
+    if(title)
+        -var profile = profile
+        .container.mt-2.mx-2 
+        .alert.alert-info
+            h5
+                a(href=profile) #{title} 
+        
     .container.mt-2 
         .row 
 

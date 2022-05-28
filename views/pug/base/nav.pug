@@ -1,3 +1,4 @@
+
 .containerfluid
     nav.navbar.navbar-expand-lg.navbar-light.bg-light
       a.navbar-brand.mx-2(href='#') My Libray 
@@ -5,18 +6,16 @@
         span.navbar-toggler-icon
       #navbarNavDropdown.collapse.navbar-collapse
         ul.navbar-nav
-          li.nav-item.active
-            a.nav-link(href='/')
-              | Home 
-              span.sr-only (current)
-          li.nav-item
-            a.nav-link(href='#') Features
-          li.nav-item
-            a.nav-link(href='/users/login') login
-          li.nav-item.dropdown
-            a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-              | Dropdown link
-            .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
-              a.dropdown-item(href='#') Action
-              a.dropdown-item(href='#') Another action
-              a.dropdown-item(href='#') Something else here
+          for i,j in navbar
+            li.nav-item.active
+              a.nav-link(href= i)
+                | #{j} 
+                span.sr-only (current)
+          
+          //- li.nav-item.dropdown
+          //-   a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+          //-     | Dropdown link
+          //-   .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+          //-     a.dropdown-item(href) #{lo4}
+          //-     a.dropdown-item(href) #{lo5}
+          //-     a.dropdown-item(href) #{lo6}

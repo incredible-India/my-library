@@ -12,8 +12,10 @@ const path = require('path');
 //router pages
 const userlogin = require('./controller/users');
 
+const cookieParser = require("cookie-parser");
+const sessions = require('express-session');
 const app =  express();
-
+const auth = require('./auth/allAuth');
 //port numner
 
 const port = 8000 || process.env.PORT 
@@ -24,18 +26,49 @@ app.set('views','./views/pug/');
 //setting the routing pages
 app.use('/users',userlogin);
 
-
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, './'))); //for the static files
 app.use(morgan('dev'));//morgan
 app.use(cors());//cors error
+app.use(express.json())
+app.use(express.urlencoded({ extended:true }));
+
+
+
+
 
 //index page...
-app.get('/', (req, res) => {
+app.get('/',auth.spusr, async (req, res) => {
 
     res.contentType('text/html');
+    
+    let user = await req.isAuth;
 
-    res.status(200).render('index')
+    if(! user)
+    {
 
+   
+        res.status(200).render('index',
+        {
+           navbar : {'Login' : '/users/login/', 'Services': '/services', 'About': '/about'},
+           title : false
+           
+        })
+    
+    }else
+    {
+    
+        res.status(200).render('index',
+    {
+       navbar : {'Home' : '/', 'Accoim': '/smsjs', 'Announace': '/smsjs','Logout':'/users/spr/logout/'},
+       title : user.fname +  ' ' + user.lname ,
+       profile: '/users/spr/profile/'
+    })
+
+    }
+
+  
+   
 
 })
 

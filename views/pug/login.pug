@@ -12,12 +12,16 @@ block nav
 
 
 block content 
+    if(message)
+        .container.mt-3 
+            .alert.alert-danger 
+                b #{message}
     .container.mt-3 
 
-        form(action="") 
-        fieldset
-            legend User Cradential
-                i.fas.fa-key 
+        form(action="/users/login/varification/" , method="POST") 
+            fieldset
+                legend User Cradential
+                    i.fas.fa-key 
                  
 
             table 
@@ -28,19 +32,19 @@ block content
                 tbody 
                     tr 
                         td 
-                            input(type="text" placeholder="userid") 
+                            input(type="email" placeholder="userid" required name ='id') 
                         td    
-                            input(type="password") 
+                            input(type="password" required name='password') 
                     tr
                         td 
                             label(for='super').mt-3 Super User
-                            input(type="radio", name="super" id="super")
+                            input(type="radio", name="super" id="super" value="super")
                         td 
                             label(for='library').mt-3 Library Admin
-                            input(type="radio", name="super" id='library')
+                            input(type="radio", name="super" id='library' value='admin')
                         td 
                             label(for='student').mt-3 Student
-                            input(type="radio", name="super" id='student')
+                            input(type="radio", name="super" id='student' value='student')
                     tr 
                         td 
                             input.mt-3(type="submit", value="Submit")
